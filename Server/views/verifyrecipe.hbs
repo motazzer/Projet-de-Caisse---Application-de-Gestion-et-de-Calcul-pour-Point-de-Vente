@@ -1,0 +1,86 @@
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+	<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+	<title>recipe</title>
+	<link rel='stylesheet' href='/css/verifyRecipe.css' />
+
+</head>
+
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href='/products'>Produits</a></li>
+				{{#if isAdmin}}
+				<li><a href='/transaction'>Transactions</a></li>
+				<li><a href='/recipe'>Recettes</a></li>
+				<li> <a href='/recipe/verify'> Verifier Recette </a></li>
+				<li><a href=' /user'>Utilisateurs</a></li>
+				<li><a href='/products/add'>Ajouter produits</a></li>
+				<li><a href='/products/modify'>modifier produits</a></li>
+				{{/if}}
+				{{#if isAuth}}
+				<li><a href='/logout' class='right-link'>logout</a></li>
+				{{else}}
+				<li><a href='/login'>Se connecter</a></li>
+				<li><a href='/signup'>S'inscrire</a></li>
+				{{/if}}
+			</ul>
+		</nav>
+	</header>
+
+	<h1>Aujourd'hui, On a fait:</h1>
+	{{#if recipeTotal}}
+	<h3>{{recipeTotal}} (<span>{{diff}}</span>)</h3>
+	{{/if}}
+
+	<form action='POST'>
+		<div class='form-group'>
+			<label for='d1'>1 dt</label>
+			<input type='number' name='d1' />
+		</div>
+		<div class='form-group'>
+			<label for='d2'>2 dt</label>
+			<input type='number' name='d2' />
+		</div>
+		<div class='form-group'>
+			<label for='d5'>5 dt</label>
+			<input type='number' name='d5' />
+		</div>
+		<div class='form-group'>
+			<label for='d10'>10 dt</label>
+			<input type='number' name='d10' />
+		</div>
+		<div class='form-group'>
+			<label for='d20'>20 dt</label>
+			<input type='number' name='d20' />
+		</div>
+		<div class='form-group'>
+			<label for='d50'>50 dt</label>
+			<input type='number' name='d50' />
+		</div>
+		<div class='form-group'>
+			<label for='m50'>50 mil</label>
+			<input type='number' name='m50' />
+		</div>
+		<div class='form-group'>
+			<label for='m100'>100 mil</label>
+			<input type='number' name='m100' />
+		</div>
+		<div class='form-group'>
+			<label for='m200'>200 mil</label>
+			<input type='number' name='m200' />
+		</div>
+		<div class='form-group'>
+			<label for='m500'>500 mil</label>
+			<input type='number' name='m500' />
+		</div>
+
+		<button type='submit'>Verifier</button>
+	</form>
+</body>
+
+</html>

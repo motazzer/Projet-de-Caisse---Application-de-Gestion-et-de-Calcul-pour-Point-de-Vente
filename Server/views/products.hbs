@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Ma Caisse en Ligne</title>
+	<link rel="stylesheet" href="/css/products.css">
+</head>
+
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href='/products'>Produits</a></li>
+				{{#if isAdmin}}
+				<li><a href='/transaction'>Transactions</a></li>
+				<li><a href='/recipe'>Recettes</a></li>
+				<li> <a href='/recipe/verify'> Verifier Recette </a></li>
+				<li><a href=' /user'>Utilisateurs</a></li>
+				<li><a href='/products/add'>Ajouter produits</a></li>
+				<li><a href='/products/modify'>modifier produits</a></li>
+				{{/if}}
+				{{#if isAuth}}
+				<li><a href='/logout' class='right-link'>logout</a></li>
+				{{else}}
+				<li><a href='/login'>Se connecter</a></li>
+				<li><a href='/signup'>S'inscrire</a></li>
+				{{/if}}
+			</ul>
+		</nav>
+	</header>
+	<form>
+		<label for="name">Rechercher un produit :</label>
+		<input type="text" id="recherche" name="productName">
+		<input type="submit" placeholder="Rechercher">
+	</form>
+	<main>
+		<section>
+			<h2>Catégories</h2>
+			<ul>
+				{{#each categoriesList}}
+				<li><a href="?category={{.}}">{{.}}</a></li>
+				{{/each}}
+			</ul>
+		</section>
+		<section>
+			<h2>Produits</h2>
+			<ul>
+				{{#each productsList}}
+				<li>
+					<a href="javascript:addProduct({{.}})">
+						<span>{{name}}</span>
+						<span>{{price}}</span>
+					</a>
+				</li>
+				{{/each}}
+			</ul>
+		</section>
+		<section>
+			<h2>Détails de la commande</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Produit</th>
+						<th>quantite</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each transactionProductsList}}
+					<tr>
+						<td>{{name}}</td>
+						<td><input type="number" value="{{quantity}}"></td>
+					</tr>
+					{{/each}}
+				</tbody>
+				<tfoot>
+					<tr>
+						<td>Totale</td>
+						<td>{{total}}</td>
+					</tr>
+				</tfoot>
+			</table>
+			<button type="submit" onclick="confirmTransaction()">Confirmer</button>
+		</section>
+	</main>
+	<script src="index.js"></script>
+</body>
+
+</html>

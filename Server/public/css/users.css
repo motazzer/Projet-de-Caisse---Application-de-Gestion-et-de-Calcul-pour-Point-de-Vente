@@ -1,0 +1,112 @@
+/* CSS for user management page */
+
+body {
+	background-color: #92bde7;
+	font-family: Arial, sans-serif;
+}
+
+table {
+	max-width: 800px;
+	margin: 50px auto;
+	background-color: #ffffff;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+th,
+td {
+	padding: 10px;
+}
+
+th {
+	background-color: #92bde7;
+	color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+button {
+	padding: 10px 20px;
+	background-color: #92bde7;
+	color: #ffffff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+	transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+	background-color: #0f73d7;
+}
+
+td button {
+	margin: 5px;
+	padding: 5px 10px;
+	border: none;
+	border-radius: 5px;
+	background-color: #92bde7;
+	color: #fff;
+	cursor: pointer;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+td button:hover {
+	background-color: #0f73d7;
+}
+
+td.active {
+	color: #4caf50;
+}
+
+td.inactive {
+	color: #f44336;
+}
+
+td.action-buttons {
+	display: flex;
+	justify-content: center;
+}
+
+/* Optional: Add a hover effect on table rows */
+
+tr:hover {
+	background-color: #dddcdc;
+}
+
+h1,
+h2 {
+	text-align: center;
+	color: #0f73d7;
+}
+
+nav {
+	background-color: #92bde7;
+	padding: 10px;
+}
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+}
+
+nav li {
+	margin: 0 10px;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	transition: all 0.2s ease-in-out;
+}
+
+nav a:hover {
+	background-color: #0f73d7;
+}

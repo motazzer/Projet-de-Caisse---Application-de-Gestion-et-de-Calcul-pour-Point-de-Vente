@@ -1,0 +1,70 @@
+<html>
+
+<head>
+	<title>Gestion des utilisateurs</title>
+	<link rel='stylesheet' href='css/users.css' />
+	<meta charset='UTF-8' />
+</head>
+
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href='/products'>Produits</a></li>
+				{{#if isAdmin}}
+				<li><a href='/transaction'>Transactions</a></li>
+				<li><a href='/recipe'>Recettes</a></li>
+				<li> <a href='/recipe/verify'> Verifier Recette </a></li>
+				<li><a href=' /user'>Utilisateurs</a></li>
+				{{/if}}
+				{{#if isAuth}}
+				<li><a href='/logout' class='right-link'>logout</a></li>
+				{{else}}
+				<li><a href='/login'>Se connecter</a></li>
+				<li><a href='/signup'>S'inscrire</a></li>
+				{{/if}}
+			</ul>
+		</nav>
+	</header>
+
+	<h1>Gestion des utilisateurs</h1>
+
+	<!-- Affichage des utilisateurs -->
+	<table>
+		<thead>
+			<tr>
+				<th colspan='4'>Liste des utilisateurs</th>
+			</tr>
+			<tr>
+				<th>ID</th>
+				<th>Nom</th>
+				<th>Statut</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each usersList}}
+			<tr>
+				<td>{{id}}</td>
+				<td>{{username}}</td>
+				{{#if active}}
+				<td class='active'>Active</td>
+				<td class='action-buttons'>
+					<button onclick="deleteUser('{{username}}')">Supprimer</button>
+					<button onclick="switchUserState('{{username}}')">Desactiver</button>
+				</td>
+				{{else}}
+				<td class='inactive'>Inactive</td>
+				<td class='action-buttons'>
+					<button onclick="deleteUser('{{username}}')">Supprimer</button>
+					<button onclick="switchUserState('{{username}}')">Activer</button>
+				</td>
+				{{/if}}
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+	<script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,343 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #92bde7;
+	color: #fff;
+	line-height: 1.6;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	padding: 1em;
+}
+
+h1 {
+	text-align: center;
+	color: #0f73d7;
+}
+
+.container {
+	max-width: 1170px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1em;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+.brand {
+	text-align: center;
+}
+
+.brand span {
+	color: #fff;
+}
+
+.wrapper {
+	box-shadow: 0 0 20px 0 rgba(72, 94, 116, 0.7);
+	background: #c9e6ff;
+}
+
+.wrapper > * {
+	padding: 1em;
+}
+
+.contact {
+	background: #f9feff;
+}
+
+/* FORM STYLES */
+.contact form {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 20px;
+	padding: 2em;
+}
+
+.contact form label {
+	display: block;
+	margin-bottom: 0.5em;
+	color: #485e74;
+}
+
+.contact form input {
+	width: 100%;
+	padding: 0.5em;
+	border: 2px solid #485e74;
+	border-radius: 5px;
+	font-size: 1em;
+}
+
+.contact form button {
+	background: #485e74;
+	border: 0;
+	text-transform: uppercase;
+	color: #fff;
+	padding: 0.5em;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease-out;
+}
+
+.contact form button:hover {
+	background: #92bde7;
+}
+
+.alert {
+	text-align: center;
+	padding: 10px;
+	background: #79c879;
+	color: #fff;
+	margin-bottom: 10px;
+	display: none;
+}
+
+/* TABLE STYLES */
+#product-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+#product-table th,
+#product-table td {
+	padding: 0.5em;
+	border: 1px solid #485e74;
+	text-align: center;
+}
+
+#product-table th {
+	background-color: #92bde7;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+/* LARGE SCREENS */
+@media (min-width: 700px) {
+	.wrapper {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+	}
+
+	.wrapper > * {
+		padding: 2em;
+	}
+
+	.company-info h3,
+	.company-info ul,
+	.brand {
+		text-align: left;
+	}
+}
+
+nav {
+	background-color: #92bde7;
+	padding: 10px;
+}
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+}
+
+nav li {
+	margin: 0 10px;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	transition: all 0.2s ease-in-out;
+}
+
+nav a:hover {
+	background-color: #0f73d7;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #92bde7;
+	color: #fff;
+	line-height: 1.6;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	padding: 1em;
+}
+
+.container {
+	max-width: 1170px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1em;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+.brand {
+	text-align: center;
+}
+
+.brand span {
+	color: #fff;
+}
+
+.wrapper {
+	box-shadow: 0 0 20px 0 rgba(72, 94, 116, 0.7);
+	background: #c9e6ff;
+}
+
+.wrapper > * {
+	padding: 1em;
+}
+
+.contact {
+	background: #f9feff;
+}
+
+/* FORM STYLES */
+.contact form {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 20px;
+	padding: 2em;
+}
+
+.contact form label {
+	display: block;
+	margin-bottom: 0.5em;
+	color: #485e74;
+}
+
+.contact form input {
+	width: 100%;
+	padding: 0.5em;
+	border: 2px solid #485e74;
+	border-radius: 5px;
+	font-size: 1em;
+}
+
+.contact form button {
+	background: #485e74;
+	border: 0;
+	text-transform: uppercase;
+	color: #fff;
+	padding: 0.5em;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease-out;
+}
+
+.contact form button:hover {
+	background: #92bde7;
+}
+
+.alert {
+	text-align: center;
+	padding: 10px;
+	background: #79c879;
+	color: #fff;
+	margin-bottom: 10px;
+	display: none;
+}
+
+/* PRODUCT LIST STYLES */
+.product-list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.product {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 10px 0;
+	width: 100%;
+	max-width: 700px;
+	padding: 10px;
+	background-color: #f9feff;
+	box-shadow: 0 0 10px 0 rgba(72, 94, 116, 0.7);
+}
+
+.product > * {
+	flex-basis: 20%;
+	text-align: center;
+}
+
+.product-name {
+	flex-basis: 30%;
+	text-align: left;
+}
+
+.product-category {
+	flex-basis: 25%;
+}
+
+.product-price,
+.product-quantity {
+	flex-basis: 10%;
+}
+
+/* TABLE STYLES */
+#product-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+#product-table th,
+#product-table td {
+	padding: 0.5em;
+	border: 1px solid #485e74;
+	text-align: center;
+}
+
+#product-table th {
+	background-color: #92bde7;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+/* LARGE SCREENS */
+@media (min-width: 700px) {
+	.wrapper {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+	}
+
+	.wrapper > * {
+		padding: 2em;
+	}
+}
+
+#add-product-btn {
+	background-color: #92bde7;
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #3e8e41;
+}
+
+td {
+	color: black !important;
+}

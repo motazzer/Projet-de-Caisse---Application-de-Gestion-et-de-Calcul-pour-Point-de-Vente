@@ -1,0 +1,48 @@
+<html>
+
+<head>
+	<title>Recettes</title>
+	<link rel='stylesheet' href='/css/recipes.css' />
+
+</head>
+
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href='/products'>Produits</a></li>
+				{{#if isAdmin}}
+				<li><a href='/transaction'>Transactions</a></li>
+				<li><a href='/recipe'>Recettes</a></li>
+				<li> <a href='/recipe/verify'> Verifier Recette </a></li>
+				<li><a href=' /user'>Utilisateurs</a></li>
+				{{/if}}
+				{{#if isAuth}}
+				<li><a href='/logout' class='right-link'>logout</a></li>
+				{{else}}
+				<li><a href='/login'>Se connecter</a></li>
+				<li><a href='/signup'>S'inscrire</a></li>
+				{{/if}}
+			</ul>
+		</nav>
+	</header>
+	<h1>Liste des recettes</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Date</th>
+				<th>Total</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each recipesList}}
+			<tr>
+				<td>{{date}}</td>
+				<td>{{total}}</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</body>
+
+</html>

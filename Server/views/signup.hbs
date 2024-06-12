@@ -1,0 +1,70 @@
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8' />
+	<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+	<meta http-equiv='X-UA-Compatible' content='ie=edge' />
+	<title>project db</title>
+	<link rel='stylesheet' href='/css/signup.css' />
+</head>
+
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href='/products'>Produits</a></li>
+				{{#if isAdmin}}
+				<li><a href='/transaction'>Transactions</a></li>
+				<li><a href='/recipe'>Recettes</a></li>
+				<li> <a href='/recipe/verify'> Verifier Recette </a></li>
+				<li><a href=' /user'>Utilisateurs</a></li>
+				{{/if}}
+				{{#if isAuth}}
+				<li><a href='/logout' class='right-link'>logout</a></li>
+				{{else}}
+				<li><a href='/login'>Se connecter</a></li>
+				<li><a href='/signup'>S'inscrire</a></li>
+				{{/if}}
+
+			</ul>
+		</nav>
+	</header>
+	<div class='container'>
+		<h1 class='brand'><span>Coin</span> Station</h1>
+		<div class='wrapper'>
+			<div class='company-info'>
+				<h3>Sign Up</h3>
+				<ul>
+					<li><i class='fa fa-road'></i> Bizerte</li>
+					<li><i class='fa fa-phone'></i> 78 231 724</li>
+					<li><i class='fa fa-envelope'></i> coinstation@gmail.com</li>
+				</ul>
+			</div>
+			<div class='contact'>
+				<h3>Demander un compte</h3>
+				<form id='contactForm' method='post'>
+					<p class='full'>
+						<label>Nom d'utilisateur</label>
+						<br />
+						<input type='text' name='username' id='name' required />
+					</p>
+					<p class='full'>
+						<label>Mot de passe</label><br />
+						<input type='password' name='password' id='password' required />
+					</p>
+					<p class='full check'>
+						<input type='checkbox' name='isAdmin' id='isAdmin' />
+						<label for='isAdmin'>Admin</label><br />
+					</p>
+
+					<p class='full'>
+						<button type='submit'>Sign up</button>
+					</p>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
